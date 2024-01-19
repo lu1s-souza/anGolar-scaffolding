@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"github.com/gofiber/fiber/v2"
+	routes "github.com/lu1s-souza/anGolar-scaffolding/api"
+)
 
 func main() {
-	fmt.Println("Hello anGolar scaffolding!")
+	app := fiber.New()
+	routes.PublicRoutes(app)
+
+	app.Listen(":3000")
 }
